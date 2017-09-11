@@ -1,0 +1,67 @@
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1> Waiters Work SChedule! </h1>
+
+    <table>
+        <tr>
+        <th class="{{status}}">Monday</th>
+        <th class="{{status}}">Tuesday</th>
+        <th class="{{status}}">Wednesday</th>
+        <th class="{{status}}">Thursday</th>
+        <th class="{{status}}">Friday</th>
+        <th class="{{status}}">Saturday</th>
+        <th class="{{status}}">Sunday</th>
+
+    </tr>
+            <ul>
+                <tr>
+                {{#each Monday}}
+                <li> {{this}}  </li>
+                    {{/each}}
+                </tr>
+
+                <tr>
+                {{#each Tuesday}}
+                <li> {{this}} </li>
+                    {{/each}}
+                </tr>
+
+                <tr>
+                {{#each Wednesday}}
+                <li> {{this}} </li>
+                    {{/each}}
+                </tr>
+
+                <tr>
+                {{#each Thursday}}
+                <li> {{this}} </li>
+                    {{/each}}
+                </tr>
+
+                <tr>
+                {{#each Friday}} </li>
+                <li> {{this}}
+                    {{/each}}
+                </tr>
+
+                <tr>
+                {{#each Saturday}}
+                <li> {{this}} </li>
+                    {{/each}}
+                </tr>
+
+                <tr>
+                {{#each Sunday}}
+                <li> {{this}} </li>
+                    {{/each}}
+                </tr>
+
+
+    </table>
+
+
+
+</body>
