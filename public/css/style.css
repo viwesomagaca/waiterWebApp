@@ -1,9 +1,12 @@
 body{
     background-color: lavender;
+    background-image: url("waiter.jpg");
 }
 
 table{
-    width: 100%;
+    align: center;
+    width: 70%;
+    background-color: beige;
 }
 table, tr, td,th{
     border-collapse: collapse;
@@ -11,4 +14,19 @@ table, tr, td,th{
 }
 li{
     list-style: none;
+}
+.index{
+    background-color: beige;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.needMore{
+    background-color: orange;
+}
+.enough{
+    background-color: green;
+}
+.warning{
+    background-color: red;
 }
