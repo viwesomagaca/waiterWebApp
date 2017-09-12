@@ -5,61 +5,62 @@
 <body>
     <h1> Waiters Work SChedule! </h1>
 
-    <table>
+    <table frame="box">
+        <thead>
         <tr>
-        <th class="{{status}}">Monday</th>
-        <th class="{{status}}">Tuesday</th>
-        <th class="{{status}}">Wednesday</th>
-        <th class="{{status}}">Thursday</th>
-        <th class="{{status}}">Friday</th>
-        <th class="{{status}}">Saturday</th>
-        <th class="{{status}}">Sunday</th>
-
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
     </tr>
-            <ul>
-                <tr>
+</thead>
+<tr>
+    <ul>
+    <td>
                 {{#each Monday}}
                 <li> {{this}}  </li>
                     {{/each}}
-                </tr>
-
-                <tr>
+</td>
+<td>
                 {{#each Tuesday}}
                 <li> {{this}} </li>
                     {{/each}}
-                </tr>
+</td>
+<td>
 
-                <tr>
                 {{#each Wednesday}}
                 <li> {{this}} </li>
                     {{/each}}
-                </tr>
+</td>
+<td>
 
-                <tr>
                 {{#each Thursday}}
                 <li> {{this}} </li>
                     {{/each}}
-                </tr>
 
-                <tr>
+</td>
+<td>
+
                 {{#each Friday}} </li>
                 <li> {{this}}
                     {{/each}}
-                </tr>
-
-                <tr>
+</td>
+<td>
                 {{#each Saturday}}
                 <li> {{this}} </li>
                     {{/each}}
-                </tr>
+</td>
+<td>
 
-                <tr>
                 {{#each Sunday}}
                 <li> {{this}} </li>
                     {{/each}}
+                </td>
                 </tr>
-
-
+</ul>
     </table>
 
 

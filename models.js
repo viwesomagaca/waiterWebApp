@@ -5,7 +5,7 @@ module.exports = function(mongoUrl) {
 
     const availability = mongoose.model('availability', {
         name: String,
-        Day:Object
+        Day:[]
     })
 
     return {
