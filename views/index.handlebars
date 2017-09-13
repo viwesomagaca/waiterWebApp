@@ -5,16 +5,16 @@
 <body>
     <div class="index" align="center">
     <h1> Wailters Availability </h1>
-
-<p> Hello, {{name}} ..Please select 3 working Days.</p>
+    {{messages.error}}
+{{message}}
     <form class="weekDays" action="" method="post">
         <input type="checkbox" name="weekdays" value="Monday" >Monday
-        <input type="checkbox" name="weekdays" value="Tuesday">Tuesday
-        <input type="checkbox" name="weekdays" value="Wednesday">Wednesday
-        <input type="checkbox" name="weekdays" value="Thursday"> Thursday
-        <input type="checkbox" name="weekdays" value="Friday">Friday
-        <input type="checkbox" name="weekdays" value="Saturday">Saturday
-        <input type="checkbox" name="weekdays" value="Sunday"> Sunday
+        <input type="checkbox" name="weekdays" value="Tuesday" >Tuesday
+        <input type="checkbox" name="weekdays" value="Wednesday" >Wednesday
+        <input type="checkbox" name="weekdays" value="Thursday" > Thursday
+        <input type="checkbox" name="weekdays" value="Friday" >Friday
+        <input type="checkbox" name="weekdays" value="Saturday" >Saturday
+        <input type="checkbox" name="weekdays" value="Sunday" > Sunday
         <button type="submit" name="button">Submit</button>
     </form>
 

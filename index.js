@@ -23,11 +23,7 @@ app.use(session({
 }));
 app.use(flash());
 
-app.get("/",function(req,res){
-    res.redirect("/waiter")
-})
-
-app.get("/waiter", waitersRoutes.avail)
+app.get("/waiter/", waitersRoutes.avail)
 
 app.get("/waiter/:id", waitersRoutes.usernames)
 app.post("/waiter/:id", waitersRoutes.update)

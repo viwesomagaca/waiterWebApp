@@ -2,27 +2,45 @@ module.exports = function(waiters) {
     var waiterModel = waiters.availability
 
     const avail = function(req, res, done) {
-        res.render("waiters");
-    }
-    const id = function(req, res, done) {
-        var waiterId = req.params.id
-        //    console.log(waiterId);
         res.render("index");
     }
-
     const usernames = function(req, res, done) {
-        var waiterId = req.params.id;
-        res.render("index")
-    }
+        var waiterId = req.params.id
+        var firstL = req.params.id.substring(0,1)
+        var caps = req.params.id.substring(0,1).toUpperCase();
 
+        if(!waiterId){
+            req.flash("error","Please insert waiter name on your Parameter");
+            res.render('index')
+        }else{
+        var message = "Hello, " + waiterId + " Please select 3 working Days!"
+        res.render("index", {message: message})
+    }
+}
     const update = function(req, res, done) {
         var addWaiter = {};
-        var waiterId = req.params.id
         var weekdays = req.body.weekdays;
-        console.log(weekdays);
-
+        var waiterId = req.params.id
+        var firstL = req.params.id.substring(0,1)
+        var caps = req.params.id.substring(0,1).toUpperCase();
+        var waiterUsername ={
+            name: waiterId.replace(firstL,caps)
+        }
+        if(!waiterUsername){
+            req.flash("error","Please insert waiter name on your Parameter");
+            res.render('index')
+        } else
+        if(weekdays.length < 3){
+            req.flash("error","Please Tick 3 Days");
+            res.render('index')
+        }else
+            if(weekdays.length > 3){
+                req.flash("error","Please Tick only 3 Days.");
+                res.render('index')
+            }
+         else if(waiterUsername && weekdays.length == 3){
         waiters.availability.findOneAndUpdate({
-            name: waiterId
+            name: waiterId.replace(firstL,caps)
         }, {
             Day: weekdays
         }, function(err, result) {
@@ -30,32 +48,39 @@ module.exports = function(waiters) {
                 return done(err)
             }
 
+
             if (result == null) {
                 waiters.availability.create({
-                    name: waiterId,
+                    name: waiterId.replace(firstL,caps),
                     Day: weekdays
                 }, function(err, result) {
                     if (err) {
                         return done(err)
                     }
-
+                    var message ="";
+                   message = "Hello, " + waiterId + " Please select 3 working Days!";
                     var display = {
                         name: result.name,
-                        Day: result.Day
+                        Day: result.Day,
+                        message:message
                     }
                     res.render("index", display)
                 })
             }
             if (result !== null) {
                 console.log("Already Exists");
-
+                var message= "";
+                 message = "Welcome back, " + waiterId + "."
+                 console.log(message);
                 var display = {
                     name: result.name,
-                    Day: result.Day
+                    Day: result.Day,
+                    message:message
                 }
                 res.render("index", display)
             }
         })
+    }
     }
     const admin = function(req, res, done) {
         var mondayShift = [];
@@ -73,12 +98,8 @@ module.exports = function(waiters) {
                 for (var i = 0; i < output.length; i++) {
                     var waiterName = output[i].name;
                     var workingdays = output[i].Day;
-                    //console.log(waiterName);
-                    //console.log(workingdays);
 
                     for (var k = 0; k < workingdays.length; k++) {
-                        // console.log("**********");
-                        // console.log(workingdays);
                         if (workingdays[k] == 'Monday') {
                             mondayShift.push(waiterName);
                             console.log("--------");
@@ -99,7 +120,7 @@ module.exports = function(waiters) {
                     }
                 }
 
-                //console.log(mondayShift);
+
                 res.render('days', {
                     Monday: mondayShift,
                     Tuesday: tuesdayShift,
@@ -116,10 +137,11 @@ module.exports = function(waiters) {
 
     }
 
+    const validation = function(req, res, done){
 
+    }
     return {
         avail,
-        id,
         usernames,
         update,
         admin
