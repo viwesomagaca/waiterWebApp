@@ -82,6 +82,20 @@ module.exports = function(waiters) {
         })
     }
     }
+
+     function backgroundColor(waiterDays){
+         if(waiterDays <3){
+             return "needMore";
+         }else
+             if(waiterDays === 3){
+                 return "enough";
+             }else
+                 if(waiterDays > 3){
+                 return "warning";
+             }
+         }
+
+
     const admin = function(req, res, done) {
         var mondayShift = [];
         var tuesdayShift = [];
@@ -123,12 +137,25 @@ module.exports = function(waiters) {
 
                 res.render('days', {
                     Monday: mondayShift,
+                    mondayColor: backgroundColor(mondayShift.length),
+
                     Tuesday: tuesdayShift,
+                    tuesdayColor:backgroundColor(tuesdayShift.length),
+
                     Wednesday: wednesdayShift,
+                    wednesdayColor: backgroundColor(wednesdayShift.length),
+
                     Thursday: thursdayShift,
+                    thursdayColor: backgroundColor(thursdayShift.length),
+
                     Friday: fridayShift,
+                    fridayColor: backgroundColor(fridayShift.length),
+
                     Saturday: saturdayShift,
-                    Sunday:sundayShift
+                    saturdayColor: backgroundColor(saturdayShift.length),
+
+                    Sunday:sundayShift,
+                    sundayColor: backgroundColor(sundayShift.length)
 
                 })
 
@@ -137,13 +164,12 @@ module.exports = function(waiters) {
 
     }
 
-    const validation = function(req, res, done){
 
-    }
     return {
         avail,
         usernames,
         update,
-        admin
+        admin,
+        backgroundColor
     }
 }

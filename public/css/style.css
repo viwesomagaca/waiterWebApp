@@ -22,11 +22,14 @@ li{
 }
 
 .needMore{
+    /*color :gray;*/
     background-color: orange;
 }
 .enough{
+    /*color :green;*/
     background-color: green;
 }
 .warning{
+    /*color :blue;*/
     background-color: red;
 }

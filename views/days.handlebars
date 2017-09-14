@@ -7,59 +7,62 @@
 
     <table frame="box" align="center">
         <thead>
+            <tr>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
         <tr>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-        <th>Saturday</th>
-        <th>Sunday</th>
-    </tr>
-</thead>
-<tr>
 
-    <td>
+            <td class={{mondayColor}}>
                 {{#each Monday}}
-                <li> {{this}}  </li>
-                    {{/each}}
-</td>
-<td>
+                    <li> {{this}} </li>
+                {{/each}}
+            </td>
+
+            <td class={{tuesdayColor}}>
                 {{#each Tuesday}}
-                <li> {{this}} </li>
-                    {{/each}}
-</td>
-<td>
+                    <li> {{this}} </li>
+                {{/each}}
+            </td>
 
+            <td class={{wednesdayColor}}>
                 {{#each Wednesday}}
-                <li> {{this}} </li>
-                    {{/each}}
-</td>
-<td>
+                    <li> {{this}} </li>
+                {{/each}}
+            </td>
 
+            <td class={{thursdayColor}}>
                 {{#each Thursday}}
-                <li> {{this}} </li>
-                    {{/each}}
+                    <li> {{this}} </li>
+                {{/each}}
 
-</td>
-<td>
+            </td>
 
-                {{#each Friday}} </li>
-                <li> {{this}}
-                    {{/each}}
-</td>
-<td>
+            <td class={{fridayColor}}>
+                {{#each Friday}}
+                    </li>
+                    <li> {{this}}
+                {{/each}}
+            </td>
+
+            <td class={{saturdayColor}}>
                 {{#each Saturday}}
-                <li> {{this}} </li>
-                    {{/each}}
-</td>
-<td>
+                    <li> {{this}} </li>
+                {{/each}}
+            </td>
 
+            <td class={{sundayColor}}>
                 {{#each Sunday}}
-                <li> {{this}} </li>
-                    {{/each}}
-                </td>
-                </tr>
+                    <li> {{this}} </li>
+                {{/each}}
+            </td>
+        </tr>
     </table>
 
 
