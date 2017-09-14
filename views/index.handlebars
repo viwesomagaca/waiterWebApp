@@ -1,20 +1,27 @@
 <head>
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Combo|Margarine|Risque" rel="stylesheet">
 </head>
 
 <body>
     <div class="index" align="center">
+        <br>
     <h1> Wailters Availability </h1>
+<div class="error">
     {{messages.error}}
-{{message}}
+
+    {{message}}
+</div>
+<br>
+<br>
     <form class="weekDays" action="" method="post">
-        <input type="checkbox" name="weekdays" value="Monday" {{#if Day.Monday}}checked{{/if}} >Monday
-        <input type="checkbox" name="weekdays" value="Tuesday" {{#if Day.Tuesday}}checked{{/if}} >Tuesday
-        <input type="checkbox" name="weekdays" value="Wednesday" {{#if Day.Wednesday}}checked{{/if}} >Wednesday
-        <input type="checkbox" name="weekdays" value="Thursday" {{#if Day.Thursday}}checked{{/if}} > Thursday
-        <input type="checkbox" name="weekdays" value="Friday" {{#if Day.Friday}}checked{{/if}} >Friday
-        <input type="checkbox" name="weekdays" value="Saturday" {{#if Day.Saturday}}checked{{/if}} >Saturday
-        <input type="checkbox" name="weekdays" value="Sunday" {{#if Day.Sunday}}checked{{/if}} > Sunday
+        <input type="checkbox" name="weekdays" value="Monday" {{#if weekdays.Monday}}checked{{/if}} >Monday
+        <input type="checkbox" name="weekdays" value="Tuesday" {{#if weekdays.Tuesday}}checked{{/if}} >Tuesday
+        <input type="checkbox" name="weekdays" value="Wednesday" {{#if weekdays.Wednesday}}checked{{/if}} >Wednesday
+        <input type="checkbox" name="weekdays" value="Thursday" {{#if weekdays.Thursday}}checked{{/if}} > Thursday
+        <input type="checkbox" name="weekdays" value="Friday" {{#if weekdays.Friday}}checked{{/if}} >Friday
+        <input type="checkbox" name="weekdays" value="Saturday" {{#if weekdays.Saturday}}checked{{/if}} >Saturday
+        <input type="checkbox" name="weekdays" value="Sunday" {{#if weekdays.Sunday}}checked{{/if}} > Sunday
         <button type="submit" name="button">Submit</button>
     </form>
 
@@ -23,5 +30,6 @@
 {{this}}
 </p>
 {{/each}}
+<br>
 </div>
 </body>

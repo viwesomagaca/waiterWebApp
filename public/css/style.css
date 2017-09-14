@@ -3,33 +3,86 @@ body{
     background-image: url("waiter.jpg");
 }
 
+h1{
+    font-size: 50px;
+    font-family: 'Margarine', cursive;
+}
+
 table{
     align: center;
     width: 70%;
-    background-color: beige;
+    background-color: grey;
 }
-table, tr, td,th{
+table, tr, td,{
+    font-family: 'Combo', cursive;
     border-collapse: collapse;
-    border: 2px solid black;
+    border: 1px solid black;
+    text-align: center;
+}
+th{
+    font-family: 'Risque', cursive;
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+    height: 4em;
+    width:10em;
+    font-size: 22px;
 }
 li{
+    font-family: 'Combo', cursive;
     list-style: none;
+}
+.error{
+    font-family: 'Combo', cursive;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24px;
+}
+h3,.weekDays{
+    font-family: 'Combo', cursive;
+    font-size: 24px;
+}
+
+.Orange{
+    font-family: 'Combo', cursive;
+    font-size: 22px;
+    background-color:orange;
+    height: 4em;
+    width: 13em;
+}
+.Green{
+    font-family: 'Combo', cursive;
+    font-size: 22px;
+    background-color: green;
+    height: 4em;
+    width: 13em;
+}
+.Red{
+    font-family: 'Combo', cursive;
+    font-size: 22px;
+    background-color:red;
+    height: 4em;
+    width: 13em;
 }
 .index{
     background-color: beige;
     margin-left: 5em;
     margin-right: 5em;
+
 }
 
 .needMore{
-    /*color :gray;*/
+    font-family: 'Combo', cursive;
     background-color: orange;
+    font-size: 20px;
 }
 .enough{
-    /*color :green;*/
+    font-family: 'Combo', cursive;
     background-color: green;
+    font-size: 20px;
 }
 .warning{
-    /*color :blue;*/
+    font-family: 'Combo', cursive;
     background-color: red;
+    font-size: 20px;
 }

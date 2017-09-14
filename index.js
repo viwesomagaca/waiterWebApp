@@ -31,6 +31,8 @@ app.post("/waiter/:id", waitersRoutes.update)
 app.get("/days",waitersRoutes.admin)
 app.post("/days", waitersRoutes.admin)
 
+app.get("/days",waitersRoutes.clear)
+app.post("/days", waitersRoutes.clear)
 
 
 

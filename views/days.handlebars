@@ -1,10 +1,26 @@
 <head>
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Combo|Margarine|Risque" rel="stylesheet">
 </head>
 
 <body>
     <h1 align="center"> Waiters Work SChedule! </h1>
+    <div class="error">
+        {{messages.error}}
+    </div>
 
+    <form action="days" method="post">
+        <input type="submit" name="clear" type="submit" value="clear" align="left">
+    </form>
+    <div class="keys" align="center">
+        <h3> Keys: </h3>
+        <input type="button" class="Orange" value="Need more waiters">
+        <input type="button" class="Green" value="Have enough waiters">
+        <input type="button" class="Red" value="Reduce waiters Please">
+        </h3>
+    </div>
+    <br>
+    <br>
     <table frame="box" align="center">
         <thead>
             <tr>
@@ -19,45 +35,45 @@
         </thead>
         <tr>
 
-            <td class={{mondayColor}}>
+            <td class= {{mondayColor}}>
                 {{#each Monday}}
                     <li> {{this}} </li>
                 {{/each}}
             </td>
 
-            <td class={{tuesdayColor}}>
+            <td class= {{tuesdayColor}}>
                 {{#each Tuesday}}
                     <li> {{this}} </li>
                 {{/each}}
             </td>
 
-            <td class={{wednesdayColor}}>
+            <td class= {{wednesdayColor}}>
                 {{#each Wednesday}}
                     <li> {{this}} </li>
                 {{/each}}
             </td>
 
-            <td class={{thursdayColor}}>
+            <td class= {{thursdayColor}}>
                 {{#each Thursday}}
                     <li> {{this}} </li>
                 {{/each}}
 
             </td>
 
-            <td class={{fridayColor}}>
+            <td class= {{fridayColor}}>
                 {{#each Friday}}
                     </li>
                     <li> {{this}}
                 {{/each}}
             </td>
 
-            <td class={{saturdayColor}}>
+            <td class= {{saturdayColor}}>
                 {{#each Saturday}}
                     <li> {{this}} </li>
                 {{/each}}
             </td>
 
-            <td class={{sundayColor}}>
+            <td class= {{sundayColor}}>
                 {{#each Sunday}}
                     <li> {{this}} </li>
                 {{/each}}

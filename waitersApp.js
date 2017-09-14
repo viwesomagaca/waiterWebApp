@@ -26,11 +26,15 @@ module.exports = function(waiters) {
         var waiterUsername ={
             name: waiterId.replace(firstL,caps)
         }
-        if(!waiterUsername){
+        if(weekdays === undefined && !waiterUsername ){
             req.flash("error","Please insert waiter name on your Parameter");
             res.render('index')
         } else
-        if(weekdays.length < 3){
+        if(waiterUsername && weekdays === undefined){
+            req.flash("error","Please select your working days.");
+            res.render('index')
+        } else
+        if(weekdays.length < 3 || weekdays.length == 0){
             req.flash("error","Please Tick 3 Days");
             res.render('index')
         }else
@@ -58,7 +62,7 @@ module.exports = function(waiters) {
                         return done(err)
                     }
                     var message ="";
-                   message = "Hello, " + waiterId + " Please select 3 working Days!";
+                   message = "Thank you for Joining Us! :) " + waiterId + ". Your working days have been submitted.";
                     var display = {
                         name: result.name,
                         Day: result.Day,
@@ -116,8 +120,6 @@ module.exports = function(waiters) {
                     for (var k = 0; k < workingdays.length; k++) {
                         if (workingdays[k] == 'Monday') {
                             mondayShift.push(waiterName);
-                            console.log("--------");
-                            console.log(mondayShift);
                         } else if (workingdays[k] == 'Tuesday') {
                             tuesdayShift.push(waiterName);
                         } else if (workingdays[k] == 'Wednesday') {
@@ -164,12 +166,23 @@ module.exports = function(waiters) {
 
     }
 
+    const clear = function(req, res, done){
+        waiters.availability.find({}, function(err,result){
+            if(err){
+                return done(err)
+            }
+            console.log("it works!")
+            res.render('days')
+        })
+    }
+
 
     return {
         avail,
         usernames,
         update,
         admin,
-        backgroundColor
+        backgroundColor,
+        clear
     }
 }
