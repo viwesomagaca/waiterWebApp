@@ -4,7 +4,8 @@
   "description": "waiters web App",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node main.js"
   },
   "author": "Viwe Somagaca",
   "license": "ISC",
