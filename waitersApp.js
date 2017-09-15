@@ -16,7 +16,7 @@ module.exports = function(waiters) {
         var firstL = req.params.id.substring(0,1)
         var caps = req.params.id.substring(0,1).toUpperCase();
 
-        if(waiterId == undefined && weekdays === undefined){
+        if(waiterId == null && weekdays === undefined){
             req.flash("error","Please insert waiter name on your Parameter");
             res.render('index')
         }else{
