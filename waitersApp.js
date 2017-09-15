@@ -2,14 +2,21 @@ module.exports = function(waiters) {
     var waiterModel = waiters.availability
 
     const avail = function(req, res, done) {
-        res.render("index");
+        var waiterId = req.params.id
+            var weekdays = req.body.weekdays;
+        if(waiterId === undefined && weekdays === undefined){
+            req.flash("error","Please insert waiter name on your Parameter");
+            res.render('index')
+        }
+        //res.render("index");
     }
     const usernames = function(req, res, done) {
         var waiterId = req.params.id
+        var weekdays = req.body.weekdays;
         var firstL = req.params.id.substring(0,1)
         var caps = req.params.id.substring(0,1).toUpperCase();
 
-        if(!waiterId){
+        if(waiterId == undefined && weekdays === undefined){
             req.flash("error","Please insert waiter name on your Parameter");
             res.render('index')
         }else{
@@ -26,7 +33,7 @@ module.exports = function(waiters) {
         var waiterUsername ={
             name: waiterId.replace(firstL,caps)
         }
-        if(weekdays === undefined && !waiterUsername ){
+        if(waiterUsername == undefined && weekdays === undefined){
             req.flash("error","Please insert waiter name on your Parameter");
             res.render('index')
         } else
