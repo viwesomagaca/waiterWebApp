@@ -4,8 +4,8 @@ module.exports = function(waiters) {
     const avail = function(req, res, done) {
         var waiterId = req.params.id
             var weekdays = req.body.weekdays;
-        if(waiterId === undefined && weekdays === undefined){
-            req.flash("error","Please insert waiter name on your Parameter");
+        if(waiterId === undefined || weekdays === undefined){
+            req.flash("error","Please insert waiter name on your URL");
             res.render('index')
         }
         //res.render("index");
@@ -17,7 +17,7 @@ module.exports = function(waiters) {
         var caps = req.params.id.substring(0,1).toUpperCase();
 
         if(waiterId == null && weekdays === undefined){
-            req.flash("error","Please insert waiter name on your Parameter");
+            req.flash("error","Please insert waiter name on your URL");
             res.render('index')
         }else{
         var message = "Hello, " + waiterId + " Please select 3 working Days!"
@@ -34,7 +34,7 @@ module.exports = function(waiters) {
             name: waiterId.replace(firstL,caps)
         }
         if(waiterUsername == undefined && weekdays === undefined){
-            req.flash("error","Please insert waiter name on your Parameter");
+            req.flash("error","Please insert waiter name on your URL");
             res.render('index')
         } else
         if(waiterUsername && weekdays === undefined){
@@ -79,10 +79,8 @@ module.exports = function(waiters) {
                 })
             }
             if (result !== null) {
-                console.log("Already Exists");
                 var message= "";
                  message = "Welcome back, " + waiterId + "."
-                 console.log(message);
                 var display = {
                     name: result.name,
                     Day: result.Day,

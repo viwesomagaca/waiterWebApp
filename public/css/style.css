@@ -33,6 +33,12 @@ li{
     list-style: none;
 }
 .error{
+    color: darkred;
+    font-family: 'Combo', cursive;
+    font-style: italic;
+    font-size: 18px;
+}
+.message{
     font-family: 'Combo', cursive;
     font-style: italic;
     font-weight: bold;
