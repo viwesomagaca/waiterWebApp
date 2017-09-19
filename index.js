@@ -22,7 +22,9 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(flash());
-
+app.get("/",function(req,res,done){
+    res.redirect("/waiter/")
+})
 app.get("/waiter/", waitersRoutes.avail)
 app.post("/waiter/", waitersRoutes.avail)
 
