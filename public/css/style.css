@@ -32,6 +32,18 @@ li{
     font-family: 'Combo', cursive;
     list-style: none;
 }
+.clear{
+    font-family: 'Combo', cursive;
+    font-size: 22px;
+    background-color:beige;
+    height: 4em;
+    width: 13em;
+}
+.update{
+    font-family: 'Combo', cursive;
+    font-style: italic;
+    font-size: 20px;
+}
 .error{
     color: darkred;
     font-family: 'Combo', cursive;

@@ -9,9 +9,7 @@
         {{messages.error}}
     </div>
 
-    <!-- <form action="days" method="post">
-        <input type="submit" name="clear" type="submit" value="clear" align="left">
-    </form> -->
+
     <div class="keys" align="center">
         <h3> Keys: </h3>
         <input type="button" class="Orange" value="Need more waiters">
@@ -32,8 +30,16 @@
                 <th>Saturday</th>
                 <th>Sunday</th>
             </tr>
+
+            <td align="center" colspan="7">
+
+            {{message}}
+
+        </td>
         </thead>
-        <tr>
+
+
+<tr>
 
             <td class= {{mondayColor}}>
                 {{#each Monday}}
@@ -62,8 +68,7 @@
 
             <td class= {{fridayColor}}>
                 {{#each Friday}}
-                    </li>
-                    <li> {{this}}
+                    <li> {{this}} </li>
                 {{/each}}
             </td>
 
@@ -80,7 +85,9 @@
             </td>
         </tr>
     </table>
-
-
+<br>
+    <form action="/clear" method="post" align="center">
+        <input type="submit" class="clear" name="clear" type="submit" value="Reset Weekly Schedule" align="center">
+    </form>
 
 </body>
