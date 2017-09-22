@@ -1,6 +1,24 @@
 # waiterWebApp
 
 # Table of contents:
+
+**About the App**
+
+**How to set up the Development enviroment?**
+ * Install the dependencies.
+ * Information on how does NodeJS know what things to install?
+ 
+**How to set up your Database?**
+
+**Tests**
+
+**Running the app locally**
+
+**How to run the App**
+
+**How to use the App and What to expect?**
+
+
  ### About the App
   This is a web application that enables an Administrator to schedule his/her waiter weekly schedule.
  * Waiters can:
@@ -25,7 +43,7 @@ These are all the software you’ll need to install on their local system.
  * How does someone install the dependencies they need for your project?
    * run ```npm install``` on the terminal
       
- * Information on how does NodeJS know what things to install?
+ #### Information on how does NodeJS know what things to install?
   * There is a file intergrated with this application that is called pakage.json. This file consists of the App name,        Scripts names, and dependencies & versions that you will use.
      
  * If you run ```npm install --save <modulename>``` a few times now when coding your app. What does it do? 
