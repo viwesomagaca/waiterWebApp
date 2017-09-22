@@ -2,12 +2,24 @@
 
 # Table of contents:
 ### About the App
-  * What does the app do?
-  * App features
+ This is a web application that enables an Administrator to schedule his/her waiter weekly schedule.
+ Waiters can:
+   *select days they can work
+   *update the days they can work on.
+    
+ It enables the Administrator to:
+    *see how many waiters are available to work.
+    *reset the data to use the system for a new week.
+    
+
   
 ### How to set up the Development enviroment?
-  * lists all the software they’ll need to install on their local system.
-    
+These are all the software you’ll need to install on their local system.
+  *NodeJs.
+  *npm.
+  *MySQL.
+  *Mongodb.
+  
   ### Anything else?
   #### Install the dependencies
   * How does someone install the dependencies they need for your project
